@@ -2,7 +2,7 @@
 public class Menu {
 	
 	public static void main(String[] args) {
-	Fenetre menu = new Fenetre();
+		Fenetre menu = new Fenetre();
 	}
 	              
 }
