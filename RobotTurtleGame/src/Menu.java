@@ -16,24 +16,24 @@ public class Menu extends JFrame{
 
 	
 	public Menu() {	
-		super("Robot Turtles Game");
-		this.setSize(620, 802);
-		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setAlwaysOnTop(true);	
+		super("Robot Turtles Game");							//Nom de la fenetre menu
+		this.setSize(620, 802);									//Taile de la fenetre menu
+		this.setLocationRelativeTo(null);						//Place la fenetre au milieu de l'ecran
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Ferme quand on appuie sur la croix rouge
+		this.setAlwaysOnTop(true);								//Place la fenetre au dessus de celles ouvertes
 		
-		Panneau pan = new Panneau();
-		pan.setLayout(new BorderLayout());
+		Panneau pan = new Panneau();							//Créé le fond 
+		pan.setLayout(new BorderLayout());						//Definit le panneau comme un borderLayout 
 		
-		pan.add(createButtons(), BorderLayout.CENTER);
+		pan.add(createButtons(), BorderLayout.CENTER);			//Place les boutons du menu au centre de la fenetre
 		
-		pan.add(createCredits(), BorderLayout.SOUTH);
+		pan.add(createCredits(), BorderLayout.SOUTH);			//Place les crédits en bas de la fenetre
 		
-		pan.add(emptyLeft(), BorderLayout.WEST);
+		pan.add(emptyLeft(), BorderLayout.WEST);				//Place une layout vide à gauche de la fenetre
 		
-		pan.add(emptyRight(), BorderLayout.EAST);
+		pan.add(emptyRight(), BorderLayout.EAST);				//Place une layout vide à droite de la fenetre
 		
-		pan.add(emptyTop(), BorderLayout.NORTH);
+		pan.add(emptyTop(), BorderLayout.NORTH);				//Place une layout vide en haut de la fenetre
 
 		
 		this.setContentPane(pan);
@@ -41,30 +41,31 @@ public class Menu extends JFrame{
 	}
 	
 	
-	private JPanel createButtons() {
-		Color cBg = new Color(0,0,0,100);
-//		Color cB = new Color(192, 192, 192, 25);
+	private JPanel createButtons() {										//Cette fonction a pour but de créer les 4 boutons de notre menu
+		Color cBg = new Color(0,0,0,100);//(transparent)
+//		Color cB = new Color(192, 192, 192, 25);/(Gris translucides)
 		JPanel boutons = new JPanel(new GridLayout(4, 1, 0, 30));
 		boutons.setBackground(cBg);
 		
 		JButton jouerA2 = new JButton("Lancer une partie à 2 joueurs");
 		jouerA2.setPreferredSize(new Dimension(400, 45));
 		jouerA2.setBackground(Color.lightGray);
-		jouerA2.addActionListener(new ActionListener() {
+		jouerA2.addActionListener(new ActionListener() {					//Quand on clique sur le bouton "Lancer une partie à 2 joueurs" execute la fonction jouerA2Listener 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e1) {
+				jouerA2Listener(e1);
 				System.out.println("Commencer une partie à 2 joueurs");
 			}
 		});
-		boutons.add(jouerA2);
+		boutons.add(jouerA2);												//Ajoute boutonA2 au panneau boutons
 		
 		
 		JButton jouerA3 = new JButton("Lancer une partie à 3 joueurs");
-		jouerA3.setPreferredSize(new Dimension(400, 45));
-		jouerA3.setBackground(Color.lightGray);
+		jouerA3.setPreferredSize(new Dimension(400, 45));					//Definit la taille du bouton cliquable
+		jouerA3.setBackground(Color.lightGray);								//Definit la couleur du fond
 		jouerA3.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e2) {
 				System.out.println("Commencer une partie à 3 joueurs");	
 			}
 		});
@@ -89,6 +90,7 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e4) {
 				reglesListener(e4);
+				System.out.println("Règles");
 				
 			}
 		});
@@ -97,15 +99,30 @@ public class Menu extends JFrame{
 		return boutons;
 	}
 	
-	private void reglesListener(ActionEvent e4 ) {
+	private void jouerA2Listener(ActionEvent e1) {		//Ne fait rien pour l'instant
+		JFrame fenetreJeu2 = new JFrame();
+
+		Panneau pan = new Panneau();
+				
+		fenetreJeu2.setTitle("Partie à 2 joueurs");
+		fenetreJeu2.setSize(800,800);
+		fenetreJeu2.setLocationRelativeTo(null);
+		fenetreJeu2.setAlwaysOnTop(true);
+		
+		fenetreJeu2.setContentPane(pan);
+		fenetreJeu2.setVisible(true);
+	}
+	
+	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
 		Color cBg = new Color(255,222,173,75);
 		JFrame fenetreRegles = new JFrame();
-		JTextArea explications = new JTextArea("Voici toutes les règles de robot turtles");
 		
+		String texte = " Le but du jeu est de ";
+		JTextArea explications = new JTextArea(texte);
 		explications.setBackground(cBg);
 		
 		fenetreRegles.setTitle("Règles du jeu");
-		fenetreRegles.setSize(300, 300);
+		fenetreRegles.setSize(450, 200);
 		fenetreRegles.setLocationRelativeTo(null);
 		fenetreRegles.setAlwaysOnTop(true);
 		
@@ -114,7 +131,7 @@ public class Menu extends JFrame{
 		
 	}
 	
-	private JPanel createCredits() {
+	private JPanel createCredits() {													//Panneau situé au sud de notre fenetre, indiquant qui a participé à ce projet
 		Color cBg = new Color(255, 255, 255, 75);
 		
 		JPanel credits = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -130,7 +147,7 @@ public class Menu extends JFrame{
 		return credits;
 	}
 	
-	private JPanel emptyLeft() {
+	private JPanel emptyLeft() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
 		Color cBg = new Color(0, 0, 0, 100);
 		JPanel left = new JPanel();
 		left.setPreferredSize(new Dimension(110, 0));
@@ -138,8 +155,8 @@ public class Menu extends JFrame{
 				
 		return left;
 	}
-	
-	private JPanel emptyRight() {
+		
+	private JPanel emptyRight() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
 		Color cBg = new Color(0, 0, 0, 100);
 		JPanel right = new JPanel();
 		right.setPreferredSize(new Dimension(110, 0));
@@ -148,7 +165,7 @@ public class Menu extends JFrame{
 		return right;
 	}
 	
-	private JPanel emptyTop() {
+	private JPanel emptyTop() {							//Panneau transparent permettant un poqitionnement des boutons plus simple
 		Color cBg = new Color(0, 0, 0, 100);
 		JPanel top = new JPanel();
 		top.setPreferredSize(new Dimension(0, 230));
