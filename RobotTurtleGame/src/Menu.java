@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+import java.awt.BorderLayout; 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -108,4 +108,4 @@ public class Menu extends JFrame{
 		return top;
 	}	              
 }
-//Test pour commitAndPush
+//Test
