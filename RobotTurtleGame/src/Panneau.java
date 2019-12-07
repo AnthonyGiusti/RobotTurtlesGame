@@ -17,11 +17,10 @@ public class Panneau extends JPanel {
     } catch (IOException e) {
       e.printStackTrace();
     }
-	
 //	Logo
 	try {
 		Image logo = ImageIO.read(new File("logo.png"));
-		g.drawImage(logo, 50,50,this);
+		g.drawImage(logo, 50, 50, this);
 	} catch (IOException e) {
 		e.printStackTrace();
 	}
