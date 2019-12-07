@@ -26,4 +26,4 @@ public class Panneau extends JPanel {
 	}
   }
 }
-//Test pour commitAndPush
+//Test
