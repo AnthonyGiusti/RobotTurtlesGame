@@ -12,17 +12,10 @@ public class Panneau extends JPanel {
   public void paintComponent(Graphics g){
 //  Image de fond
 	try {
-      Image bg = ImageIO.read(new File("background.jpeg"));
+      Image bg = ImageIO.read(new File("backgroundAndLogo.png"));
       g.drawImage(bg, 0, 0, this.getWidth(), this.getHeight(), this);
     } catch (IOException e) {
       e.printStackTrace();
     }
-//	Logo
-	try {
-		Image logo = ImageIO.read(new File("logo.png"));
-		g.drawImage(logo, 50, 50, this);
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-  }
+  	}
 }
