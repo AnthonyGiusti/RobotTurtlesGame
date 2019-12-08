@@ -2,10 +2,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -114,19 +118,15 @@ public class Menu extends JFrame{
 	}
 	
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
-		Color cBg = new Color(255,222,173,75);
 		JFrame fenetreRegles = new JFrame();
-		
-		String texte = " Le but du jeu est de ";
-		JTextArea explications = new JTextArea(texte);
-		explications.setBackground(cBg);
-		
+		PanneauRegles panRegles = new PanneauRegles();
+
 		fenetreRegles.setTitle("Règles du jeu");
-		fenetreRegles.setSize(450, 200);
+		fenetreRegles.setSize(1920, 1080);
 		fenetreRegles.setLocationRelativeTo(null);
 		fenetreRegles.setAlwaysOnTop(true);
 		
-		fenetreRegles.add(explications);
+		fenetreRegles.setContentPane(panRegles);
 		fenetreRegles.setVisible(true);
 		
 	}
