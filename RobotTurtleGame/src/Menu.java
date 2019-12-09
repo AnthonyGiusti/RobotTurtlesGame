@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 public class Menu extends JFrame{
 
-	
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
 		this.setSize(620, 802);									//Taile de la fenetre menu
@@ -21,7 +20,8 @@ public class Menu extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Ferme quand on appuie sur la croix rouge
 		this.setAlwaysOnTop(true);								//Place la fenetre au dessus de celles ouvertes
 		
-		Panneau pan = new Panneau();							//Créé le fond 
+		FondMenu pan = new FondMenu();
+
 		pan.setLayout(new BorderLayout());						//Definit le panneau comme un borderLayout 
 		
 		pan.add(createButtons(), BorderLayout.CENTER);			//Place les boutons du menu au centre de la fenetre
@@ -93,22 +93,13 @@ public class Menu extends JFrame{
 			}
 		});
 		boutons.add(regles);
-
+		
 		return boutons;
 	}
 	
 	private void jouerA2Listener(ActionEvent e1) {		//Ne fait rien pour l'instant
-		JFrame fenetreJeu2 = new JFrame();
-
-		Panneau pan = new Panneau();
-				
-		fenetreJeu2.setTitle("Partie à 2 joueurs");
-		fenetreJeu2.setSize(800,800);
-		fenetreJeu2.setLocationRelativeTo(null);
-		fenetreJeu2.setAlwaysOnTop(true);
+		InterfaceJeuA2 interfaceJeuA2 = new InterfaceJeuA2();
 		
-		fenetreJeu2.setContentPane(pan);
-		fenetreJeu2.setVisible(true);
 	}
 	
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
