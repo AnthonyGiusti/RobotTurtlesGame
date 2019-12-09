@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Menu extends JFrame{
+	Color cBg = new Color(0,0,0,100);//(transparent)
+	Color cB = new Color(192, 192, 192, 25); //(Gris translucides)
 
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
@@ -40,8 +43,6 @@ public class Menu extends JFrame{
 	
 	
 	private JPanel createButtons() {										//Cette fonction a pour but de créer les 4 boutons de notre menu
-		Color cBg = new Color(0,0,0,100);//(transparent)
-		Color cB = new Color(192, 192, 192, 25); //(Gris translucides)
 		JPanel boutons = new JPanel(new GridLayout(4, 1, 0, 30));
 		boutons.setBackground(cBg);
 		
@@ -117,23 +118,23 @@ public class Menu extends JFrame{
 	}
 	
 	private JPanel createCredits() {													//Panneau situé au sud de notre fenetre, indiquant qui a participé à ce projet
-		Color cBg = new Color(255, 255, 255, 75);
+//		Color cBg = new Color(255, 255, 255, 100);
 		
 		JPanel credits = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		credits.setPreferredSize(new Dimension(802, 30));
 		credits.setBackground(cBg);
-		
 		String texte = "Designed by : Anthony Giusti - Loup Samain - Maximilien Teil";
 		
 		JLabel msg = new JLabel(texte);
-		msg.setPreferredSize(new Dimension(340, 30));
+		msg.setPreferredSize(new Dimension(620, 30));
+		msg.setForeground(Color.white);
+		msg.setFont(new Font("Arial",Font.BOLD,16));
 		credits.add(msg);
 		
 		return credits;
 	}
 	
 	private JPanel emptyLeft() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
-		Color cBg = new Color(0, 0, 0, 100);
 		JPanel left = new JPanel();
 		left.setPreferredSize(new Dimension(110, 0));
 		left.setBackground(cBg);
@@ -142,7 +143,6 @@ public class Menu extends JFrame{
 	}
 		
 	private JPanel emptyRight() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
-		Color cBg = new Color(0, 0, 0, 100);
 		JPanel right = new JPanel();
 		right.setPreferredSize(new Dimension(110, 0));
 		right.setBackground(cBg);
@@ -151,7 +151,6 @@ public class Menu extends JFrame{
 	}
 	
 	private JPanel emptyTop() {							//Panneau transparent permettant un poqitionnement des boutons plus simple
-		Color cBg = new Color(0, 0, 0, 100);
 		JPanel top = new JPanel();
 		top.setPreferredSize(new Dimension(0, 230));
 		top.setBackground(cBg);

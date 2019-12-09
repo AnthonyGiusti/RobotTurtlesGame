@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class InterfaceJeuA2 extends JFrame {
-	public Color cBg = new Color(255,255,255,100);
+	Color cBg = new Color(0,0,0,100);//(transparent)
 
 	public InterfaceJeuA2() {
 		this.setTitle("Partie à 2 joueurs");
