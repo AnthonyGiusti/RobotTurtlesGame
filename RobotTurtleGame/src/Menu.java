@@ -34,7 +34,6 @@ public class Menu extends JFrame{
 		
 		pan.add(emptyTop(), BorderLayout.NORTH);				//Place une layout vide en haut de la fenetre
 
-		
 		this.setContentPane(pan);
 		this.setVisible(true);
 	}
@@ -42,7 +41,7 @@ public class Menu extends JFrame{
 	
 	private JPanel createButtons() {										//Cette fonction a pour but de créer les 4 boutons de notre menu
 		Color cBg = new Color(0,0,0,100);//(transparent)
-//		Color cB = new Color(192, 192, 192, 25);/(Gris translucides)
+		Color cB = new Color(192, 192, 192, 25); //(Gris translucides)
 		JPanel boutons = new JPanel(new GridLayout(4, 1, 0, 30));
 		boutons.setBackground(cBg);
 		
