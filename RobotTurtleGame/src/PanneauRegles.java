@@ -18,3 +18,4 @@ public class PanneauRegles extends JPanel {
 	}
 }
 }
+
