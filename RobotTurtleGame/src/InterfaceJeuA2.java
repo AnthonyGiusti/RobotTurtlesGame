@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class InterfaceJeuA2 extends JFrame {
-	Color transparent = new Color(30,30,30,100);//(transparent)
+	Color transparent = new Color(0,0,0,50);//(transparent)
 
 	public InterfaceJeuA2() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -45,8 +45,7 @@ public class InterfaceJeuA2 extends JFrame {
 		return plateau;
 	}
 	
-	
-	private JPanel rightPanel() {
+	private JPanel intoRightPanel(){
 		JPanel boutons = new JPanel(new GridLayout(3, 1, 0, 30));
 		boutons.setBackground(transparent);
 		boutons.setPreferredSize(new Dimension(560,0));
@@ -98,6 +97,50 @@ public class InterfaceJeuA2 extends JFrame {
 		return boutons;
 
 	}
+//////////////////////////////////////////////////////////////////////////////
+					// Intérieur du Panel droit
+	private JPanel emptyBottomR() {
+		JPanel bottom = new JPanel();
+		bottom.setPreferredSize(new Dimension(0,270));
+		bottom.setBackground(transparent);
+		return bottom;
+	}
+	private JPanel emptyTopR() {
+		JPanel top = new JPanel();
+		top.setPreferredSize(new Dimension(0,270));
+		top.setBackground(transparent);
+		return top;
+	}
+	private JPanel emptyLeftR() {
+		JPanel left = new JPanel();
+		left.setPreferredSize(new Dimension(130,0));
+		left.setBackground(transparent);
+		return left;
+	}
+	private JPanel emptyRightR() {
+		JPanel right = new JPanel();
+		right.setPreferredSize(new Dimension(130,0));
+		right.setBackground(transparent);
+		return right;
+	}
+//////////////////////////////////////////////////////////////////////////////
+	
+	private JPanel rightPanel() {
+		JPanel rightP = new JPanel();
+		
+		rightP.setPreferredSize(new Dimension(560,0));
+		rightP.setBackground(transparent);
+		rightP.setLayout(new BorderLayout());
+		
+		rightP.add(intoRightPanel(), BorderLayout.CENTER);
+		rightP.add(emptyTopR(), BorderLayout.NORTH);
+		rightP.add(emptyBottomR(), BorderLayout.SOUTH);
+		rightP.add(emptyLeftR(), BorderLayout.WEST);
+		rightP.add(emptyRightR(), BorderLayout.EAST);
+
+		return rightP;
+	}
+
 	
 	private void completerProgrammeListener(ActionEvent e1) {
 		//Classe permettant d'amener  à la completion du programme
