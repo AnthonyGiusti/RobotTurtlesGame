@@ -14,8 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Menu extends JFrame{
-	Color transparent = new Color(30,30,30,100);//(transparent)
-
+	Color transparent = new Color(0,0,0,50);//(transparent)
+	Color vertFonce = new Color(0,100,0);
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
 		this.setSize(620, 802);									//Taile de la fenetre menu
@@ -48,7 +48,7 @@ public class Menu extends JFrame{
 		boutons.setBackground(transparent);
 		
 		JButton jouerA2 = new JButton("Lancer une partie à 2 joueurs");
-		jouerA2.setForeground(Color.white);
+		jouerA2.setForeground(vertFonce);
 		jouerA2.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
 		jouerA2.setPreferredSize(new Dimension(400, 45));
 		jouerA2.setBackground(Color.lightGray);
@@ -64,7 +64,7 @@ public class Menu extends JFrame{
 		
 		JButton jouerA3 = new JButton("Lancer une partie à 3 joueurs");
 		jouerA3.setPreferredSize(new Dimension(400, 45));
-		jouerA3.setForeground(Color.white);
+		jouerA3.setForeground(vertFonce);
 		jouerA3.setFont(new Font("Arial",Font.CENTER_BASELINE,24));//Definit la taille du bouton cliquable
 		jouerA3.setBackground(Color.lightGray);								//Definit la couleur du fond
 		jouerA3.addActionListener(new ActionListener() {
@@ -79,7 +79,7 @@ public class Menu extends JFrame{
 
 		JButton jouerA4 = new JButton("Lancer une partie à 4 joueurs");
 		jouerA4.setPreferredSize(new Dimension(400, 45));
-		jouerA4.setForeground(Color.white);
+		jouerA4.setForeground(vertFonce);
 		jouerA4.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
 		jouerA4.setBackground(Color.lightGray);
 		jouerA4.addActionListener(new ActionListener() {
@@ -92,7 +92,7 @@ public class Menu extends JFrame{
 
 		JButton regles = new JButton("Règles du jeu");
 		regles.setPreferredSize(new Dimension(400, 45));
-		regles.setForeground(Color.white);
+		regles.setForeground(vertFonce);
 		regles.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
 		regles.setBackground(Color.lightGray);
 		regles.addActionListener(new ActionListener() {
