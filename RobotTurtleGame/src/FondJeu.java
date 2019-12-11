@@ -11,8 +11,8 @@ public class FondJeu extends JPanel {
   public void paintComponent(Graphics g){
 //  Image de fond
 	try {
-      Image bg = ImageIO.read(new File("fondJeu.jpg"));
-      g.drawImage(bg, 0, 0, this.getWidth(), this.getHeight(), this);
+      Image bgJeu = ImageIO.read(new File("fondJeu.jpg"));
+      g.drawImage(bgJeu, 0, 0, this.getWidth(), this.getHeight(), this);
     } catch (IOException e) {
       e.printStackTrace();
     }

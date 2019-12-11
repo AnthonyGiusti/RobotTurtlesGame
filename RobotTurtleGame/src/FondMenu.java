@@ -9,12 +9,13 @@ import javax.swing.JPanel;
 public class FondMenu extends JPanel {
 	
   public void paintComponent(Graphics g){
-//  Image de fond
+	  Image bgMenu;
 	try {
-      Image bg = ImageIO.read(new File("backgroundAndLogo.png"));
-      g.drawImage(bg, 0, 0, this.getWidth(), this.getHeight(), this);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+		bgMenu = ImageIO.read(new File("backgroundAndLogo.png"));
+		g.drawImage(bgMenu, 0, 0, this.getWidth(), this.getHeight(), this);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
   	}
 }
