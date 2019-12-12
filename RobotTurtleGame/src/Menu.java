@@ -14,8 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Menu extends JFrame{
-	Color transparent = new Color(0,0,0,50);//(transparent)
+	Color transparent = new Color(0,0,0,50);
 	Color vertFonce = new Color(0,100,0);
+	
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
 		this.setSize(620, 802);									//Taile de la fenetre menu
@@ -115,7 +116,9 @@ public class Menu extends JFrame{
 	private void jouerA3Listener(ActionEvent e2) {
 		InterfaceJeuA3 interfaceJeuA3 = new InterfaceJeuA3();
 	}
-	
+	private void jouerA4Listener(ActionEvent e3) {
+//		InterfaceJeuA4 = new InterfaceJeauA4();
+	}
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
 		JFrame fenetreRegles = new JFrame();
 		PanneauRegles panRegles = new PanneauRegles();
