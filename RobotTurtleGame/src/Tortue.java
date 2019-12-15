@@ -34,7 +34,7 @@ public class Tortue {
         		g.drawImage(turtle2, 98*positionTortue2[0], 100*positionTortue2[1], 95, 95,  (ImageObserver) this);
         		g.drawImage(turtle3, 100*positionTortue3[0], 100*positionTortue3[1], 95, 95, (ImageObserver) this);
         	}
-        	else if(Menu.nb_joueurs == 4) {
+        	else {
         		positionTortue1 = new int[] {};
         		positionTortue2 = new int[] {};
         		positionTortue3 = new int[] {};

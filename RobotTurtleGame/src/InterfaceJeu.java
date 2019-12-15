@@ -26,15 +26,10 @@ public class InterfaceJeu extends JFrame {
 		Fond panJeu = new Fond("fondJeu.jpg", "jeu");
 		
 		panJeu.setLayout(new BorderLayout());
-
-		panJeu.add(centerPanel(), BorderLayout.CENTER);
-		
+		panJeu.add(centerPanel(), BorderLayout.CENTER);	
 		panJeu.add(rightPanel(), BorderLayout.EAST);
-
 		panJeu.add(bottomPanel(), BorderLayout.SOUTH);
-
 		panJeu.add(topPanel(), BorderLayout.NORTH);
-		
 		panJeu.add(leftPanel(), BorderLayout.WEST);
 		
 		this.setContentPane(panJeu);
@@ -45,7 +40,6 @@ public class InterfaceJeu extends JFrame {
 //		Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
 		if(Menu.nb_joueurs == 2) {
 			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
-			System.out.println('a');
 			return plateau;
 		}
 		if(Menu.nb_joueurs == 3) {
