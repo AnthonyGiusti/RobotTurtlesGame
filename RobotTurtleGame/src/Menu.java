@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class Menu extends JFrame{
 	Color transparent = new Color(0,0,0,50);
 	Color vertFonce = new Color(0,100,0);
+	public static int nb_joueurs = 0;
 	
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
@@ -25,21 +26,21 @@ public class Menu extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Ferme quand on appuie sur la croix rouge
 		this.setAlwaysOnTop(true);								//Place la fenetre au dessus de celles ouvertes
 		
-		FondMenu pan = new FondMenu();
+		Fond panMenu = new Fond("backgroundAndLogo.png", "Menu");
+		System.out.println(panMenu.toString());
+		panMenu.setLayout(new BorderLayout());						//Definit le panneau comme un borderLayout 
+		
+		panMenu.add(createButtons(), BorderLayout.CENTER);			//Place les boutons du menu au centre de la fenetre
+		
+		panMenu.add(createCredits(), BorderLayout.SOUTH);			//Place les crédits en bas de la fenetre
+		
+		panMenu.add(emptyLeft(), BorderLayout.WEST);				//Place une layout vide à gauche de la fenetre
+		
+		panMenu.add(emptyRight(), BorderLayout.EAST);				//Place une layout vide à droite de la fenetre
+		
+		panMenu.add(emptyTop(), BorderLayout.NORTH);				//Place une layout vide en haut de la fenetre
 
-		pan.setLayout(new BorderLayout());						//Definit le panneau comme un borderLayout 
-		
-		pan.add(createButtons(), BorderLayout.CENTER);			//Place les boutons du menu au centre de la fenetre
-		
-		pan.add(createCredits(), BorderLayout.SOUTH);			//Place les crédits en bas de la fenetre
-		
-		pan.add(emptyLeft(), BorderLayout.WEST);				//Place une layout vide à gauche de la fenetre
-		
-		pan.add(emptyRight(), BorderLayout.EAST);				//Place une layout vide à droite de la fenetre
-		
-		pan.add(emptyTop(), BorderLayout.NORTH);				//Place une layout vide en haut de la fenetre
-
-		this.setContentPane(pan);
+		this.setContentPane(panMenu);
 		this.setVisible(true);
 	}
 	
@@ -57,8 +58,8 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e1) {
 				jouerA2Listener(e1);
-				System.out.println("Commencer une partie à 2 joueurs");
-			}
+				nb_joueurs = 2;
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");			}
 		});
 		boutons.add(jouerA2);												//Ajoute boutonA2 au panneau boutons
 		
@@ -72,8 +73,8 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e2) {
 				jouerA3Listener(e2);
-				System.out.println("Commencer une partie à 3 joueurs");	
-			}
+				nb_joueurs = 3;
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");			}
 		});
 		boutons.add(jouerA3);
 		
@@ -85,8 +86,9 @@ public class Menu extends JFrame{
 		jouerA4.setBackground(Color.lightGray);
 		jouerA4.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Commencer une partie à 4 joueurs");	
+			public void actionPerformed(ActionEvent e4) {
+				nb_joueurs = 4;
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");				
 			}
 		});
 		boutons.add(jouerA4);
@@ -121,8 +123,8 @@ public class Menu extends JFrame{
 	}
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
 		JFrame fenetreRegles = new JFrame();
-		PanneauRegles panRegles = new PanneauRegles();
-		GraphicsEnvironment.getLocalGraphicsEnvironment();
+		Fond panRegles = new Fond("regles.png", "Regles");
+GraphicsEnvironment.getLocalGraphicsEnvironment();
 		
 		fenetreRegles.setTitle("Règles du jeu");
 		fenetreRegles.setExtendedState(fenetreRegles.getExtendedState() | fenetreRegles.MAXIMIZED_BOTH);

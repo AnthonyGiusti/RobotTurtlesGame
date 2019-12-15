@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class InterfaceJeuA2 extends JFrame {
 	Color transparent = new Color(0,0,0,50);//(transparent)
-
+	public static String type_de_fond;
 	public InterfaceJeuA2() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
 		this.setTitle("Partie à 2 joueurs");
@@ -21,30 +21,31 @@ public class InterfaceJeuA2 extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setAlwaysOnTop(true);
 		
-		FondJeu pan = new FondJeu();
-				
-		pan.setLayout(new BorderLayout());
-
-		pan.add(centerPanel(), BorderLayout.CENTER);
+		Fond panJeu = new Fond("fondJeu.jpg", "jeu");
 		
-		pan.add(rightPanel(), BorderLayout.EAST);
+		panJeu.setLayout(new BorderLayout());
 
-		pan.add(bottomnPanel(), BorderLayout.SOUTH);
+		panJeu.add(centerPanel(), BorderLayout.CENTER);
+		
+		panJeu.add(rightPanel(), BorderLayout.EAST);
 
-		pan.add(topPanel(), BorderLayout.NORTH);
+		panJeu.add(bottomPanel(), BorderLayout.SOUTH);
+
+		panJeu.add(topPanel(), BorderLayout.NORTH);
 		
-		pan.add(emptyLeft(), BorderLayout.WEST);
+		panJeu.add(leftPanel(), BorderLayout.WEST);
 		
-		this.setContentPane(pan);
+		this.setContentPane(panJeu);
 		this.setVisible(true);
 	}
-	
+	//Completer 
 	private JPanel centerPanel() {
-		Plateau plateau = new Plateau();
-		
+		Plateau plateau = new Plateau("Plateau.png", "RUBY.png","WALL.png","turtle1.png", "turtle2.png");
 		return plateau;
 	}
 	
+//////////////////////////////////////////////////////////////////////////////
+// Intérieur du Panel droit
 	private JPanel intoRightPanel(){
 		JPanel boutons = new JPanel(new GridLayout(3, 1, 0, 30));
 		boutons.setBackground(transparent);
@@ -97,8 +98,6 @@ public class InterfaceJeuA2 extends JFrame {
 		return boutons;
 
 	}
-//////////////////////////////////////////////////////////////////////////////
-					// Intérieur du Panel droit
 	private JPanel emptyBottomR() {
 		JPanel bottom = new JPanel();
 		bottom.setPreferredSize(new Dimension(0,270));
@@ -161,26 +160,26 @@ public class InterfaceJeuA2 extends JFrame {
 		//Classe ou fonction permettant l'execution du programme
 	}
 	
-	private JPanel bottomnPanel() {
-		JPanel cartesJ1 = new JPanel();
-		cartesJ1.setPreferredSize(new Dimension(0,100));
-		cartesJ1.setBackground(transparent);
+	private JPanel bottomPanel() {
+		JPanel emptyBottom = new JPanel();
+		emptyBottom.setPreferredSize(new Dimension(0,100));
+		emptyBottom.setBackground(transparent);
 		//Implémenter la manière dont on affiche 
-		return cartesJ1;
+		return emptyBottom;
 	}
 	
 	private JPanel topPanel() {
-		JPanel cartesJ2 = new JPanel();
-		cartesJ2.setPreferredSize(new Dimension(0,100));
-		cartesJ2.setBackground(transparent);
-		return cartesJ2;
+		JPanel emptyTop = new JPanel();
+		emptyTop.setPreferredSize(new Dimension(0,100));
+		emptyTop.setBackground(transparent);
+		return emptyTop;
 	}
 	
-	private JPanel emptyLeft() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
-		JPanel left = new JPanel(new GridLayout(4,2,0,35));
+	private JPanel leftPanel() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
+		JPanel cartes = new JPanel(new GridLayout(2,2,0,35));
 		
-		left.setPreferredSize(new Dimension(560, 0));
-		left.setBackground(transparent);
-		return left;
+		cartes.setPreferredSize(new Dimension(560, 0));
+		cartes.setBackground(transparent);
+		return cartes;
 	}
 }
