@@ -8,34 +8,53 @@ import javax.swing.JPanel;
 
 public class Plateau extends JPanel{
     private int[][] plateau = new int[8][8];
-    Tortue turtles = new Tortue();
+	
+    private int xMur = 700;
+    public int widthObject = 100;
+    public int heightObject = 100;
+    
     private Image imagePlateau;
     private Image imageRuby;
     private Image imageMur;
 	private Image imageTortue;
 	private Image imageTortue2;
-    private int xMur = 700;
-    private int widthObject = 100;        
-    private int heightObject = 100;
+    private Image imageTortue3;
+    private Image imageTortue4;
+    
+    public Tortue turltles;
+//    public Mur walls;
+//    public MurGlace iceWalls;
+//    public Carte cards;
 
-	public Plateau(String image_plateau, String image_ruby, String image_wall, String image_tortue, String image_tortue2) {
-    	try {
-	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
-	    	this.imageRuby = ImageIO.read(new File(image_ruby));
-	    	this.imageMur = ImageIO.read(new File(image_wall));
-	    	this.imageTortue = ImageIO.read(new File(image_tortue));
-    	} catch(IOException e) {
-    		e.printStackTrace();
+	public Plateau(int nb_Joueurs, String image_plateau, String image_ruby, String image_wall, String image_tortue, String image_tortue2) {
+    	if(nb_Joueurs == 2) {
+    		try {
+    	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
+    	    	this.imageRuby = ImageIO.read(new File(image_ruby));
+    	    	this.imageMur = ImageIO.read(new File(image_wall));
+    	    	this.imageTortue = ImageIO.read(new File(image_tortue));
+        	} catch(IOException e) {
+        		e.printStackTrace();
+        	}    		
     	}
+    	else if(nb_Joueurs == 3) {
+    		System.out.println("Jeu à 3");
+    	}
+    	else if(nb_Joueurs == 4) {
+    		System.out.println("Jeu à 4");
+    	}
+
     }
     
     public void paintComponent(Graphics g){
         g.drawImage(this.imagePlateau, 0, 0,800, 800, this);
+       
+        
         g.drawImage(this.imageRuby, 300, 700, widthObject, heightObject,  this);
 //        g.drawImage(imageTortue, 100*positionJoueur1[0], 100*positionJoueur1[1], widthObject, heightObject,  this);
 //        g.drawImage(imageTortue2, 100*positionJoueur2[0], 100*positionJoueur2[1], widthObject, heightObject,  this);
 
-        //Les murs
+        //Les murs à droite du plateau pour 2 et 3 joueurs
 
         g.drawImage(imageMur, xMur,   0, widthObject, heightObject,  this);
         g.drawImage(imageMur, xMur, 100, widthObject, heightObject,  this);

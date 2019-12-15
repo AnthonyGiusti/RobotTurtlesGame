@@ -11,10 +11,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class InterfaceJeuA2 extends JFrame {
+public class InterfaceJeu extends JFrame {
 	Color transparent = new Color(0,0,0,50);//(transparent)
 	public static String type_de_fond;
-	public InterfaceJeuA2() {
+
+	
+	public InterfaceJeu() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
 		this.setTitle("Partie à 2 joueurs");
 		this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
@@ -40,8 +42,20 @@ public class InterfaceJeuA2 extends JFrame {
 	}
 	//Completer 
 	private JPanel centerPanel() {
-		Plateau plateau = new Plateau("Plateau.png", "RUBY.png","WALL.png","turtle1.png", "turtle2.png");
-		return plateau;
+//		Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
+		if(Menu.nb_joueurs == 2) {
+			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
+			System.out.println('a');
+			return plateau;
+		}
+		if(Menu.nb_joueurs == 3) {
+			Plateau plateau = new Plateau(3, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png"); //, "turtle3.png");
+			return plateau;
+		}
+		else {
+			Plateau plateau = new Plateau(4, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png"); //,"turtle3.png", "turtle4.png");
+			return plateau;
+		}
 	}
 	
 //////////////////////////////////////////////////////////////////////////////

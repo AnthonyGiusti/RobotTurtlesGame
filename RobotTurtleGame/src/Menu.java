@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Menu extends JFrame{
+
 	Color transparent = new Color(0,0,0,50);
 	Color vertFonce = new Color(0,100,0);
 	public static int nb_joueurs = 0;
@@ -42,9 +43,11 @@ public class Menu extends JFrame{
 
 		this.setContentPane(panMenu);
 		this.setVisible(true);
+		
+		getNbJoueurs();
 	}
 	
-	
+
 	private JPanel createButtons() {										//Cette fonction a pour but de créer les 4 boutons de notre menu
 		JPanel boutons = new JPanel(new GridLayout(4, 1, 0, 30));
 		boutons.setBackground(transparent);
@@ -57,9 +60,10 @@ public class Menu extends JFrame{
 		jouerA2.addActionListener(new ActionListener() {					//Quand on clique sur le bouton "Lancer une partie à 2 joueurs" execute la fonction jouerA2Listener 
 			@Override
 			public void actionPerformed(ActionEvent e1) {
-				jouerA2Listener(e1);
 				nb_joueurs = 2;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");			}
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
+				jouerA2Listener(e1);
+			}
 		});
 		boutons.add(jouerA2);												//Ajoute boutonA2 au panneau boutons
 		
@@ -72,9 +76,10 @@ public class Menu extends JFrame{
 		jouerA3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e2) {
-//				jouerA3Listener(e2);
 				nb_joueurs = 3;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");			}
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
+				//				jouerA3Listener(e2);
+			}
 		});
 		boutons.add(jouerA3);
 		
@@ -112,7 +117,7 @@ public class Menu extends JFrame{
 	}
 	
 	private void jouerA2Listener(ActionEvent e1) {		//Ne fait rien pour l'instant
-		InterfaceJeuA2 interfaceJeuA2 = new InterfaceJeuA2();
+		InterfaceJeu interfaceJeuA2 = new InterfaceJeu();
 	}
 	
 	private void jouerA3Listener(ActionEvent e2) {
@@ -175,5 +180,9 @@ GraphicsEnvironment.getLocalGraphicsEnvironment();
 		top.setBackground(transparent);
 				
 		return top;
-	}	              
+	}	     
+	
+	private int getNbJoueurs() {
+		return nb_joueurs;
+	}
 }
