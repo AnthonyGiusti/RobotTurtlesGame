@@ -27,5 +27,4 @@ public class Fond extends JPanel {
   @Override public String toString() {
 	  return this.typeDuFond;
   }
-  
 }

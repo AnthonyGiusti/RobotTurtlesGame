@@ -16,10 +16,6 @@ public class Plateau extends JPanel{
     private Image imagePlateau;
     private Image imageRuby;
     private Image imageMur;
-	private Image imageTortue;
-	private Image imageTortue2;
-    private Image imageTortue3;
-    private Image imageTortue4;
     
     public Tortue turltles;
 //    public Mur walls;
@@ -32,7 +28,7 @@ public class Plateau extends JPanel{
     	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
     	    	this.imageRuby = ImageIO.read(new File(image_ruby));
     	    	this.imageMur = ImageIO.read(new File(image_wall));
-    	    	this.imageTortue = ImageIO.read(new File(image_tortue));
+//    	    	this.imageTortue = ImageIO.read(new File(image_tortue));
         	} catch(IOException e) {
         		e.printStackTrace();
         	}    		
