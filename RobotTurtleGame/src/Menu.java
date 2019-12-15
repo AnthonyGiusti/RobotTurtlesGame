@@ -72,7 +72,7 @@ public class Menu extends JFrame{
 		jouerA3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e2) {
-				jouerA3Listener(e2);
+//				jouerA3Listener(e2);
 				nb_joueurs = 3;
 				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");			}
 		});
@@ -116,8 +116,9 @@ public class Menu extends JFrame{
 	}
 	
 	private void jouerA3Listener(ActionEvent e2) {
-		InterfaceJeuA3 interfaceJeuA3 = new InterfaceJeuA3();
+//		InterfaceJeuA3 interfaceJeuA3 = new InterfaceJeuA3();
 	}
+	
 	private void jouerA4Listener(ActionEvent e3) {
 //		InterfaceJeuA4 = new InterfaceJeauA4();
 	}
