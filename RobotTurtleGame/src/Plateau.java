@@ -16,51 +16,93 @@ public class Plateau extends JPanel{
     private Image imagePlateau;
     private Image imageRuby;
     private Image imageMur;
+    private Image imageTortue1;
+    private Image imageTortue2;
+    private Image imageTortue3;
+    private Image imageTortue4;
     
-    public Tortue turltles;
+//    public Tortues turltles;
 //    public Mur walls;
 //    public MurGlace iceWalls;
 //    public Carte cards;
 
-	public Plateau(int nb_Joueurs, String image_plateau, String image_ruby, String image_wall, String image_tortue, String image_tortue2) {
+	public Plateau(int nb_Joueurs, String image_plateau, String image_ruby, String image_wall, String image_tortue1, String image_tortue2,String image_tortue3, String image_tortue4) {
     	if(nb_Joueurs == 2) {
     		try {
+    			System.out.println("Jeu à 2");
     	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
     	    	this.imageRuby = ImageIO.read(new File(image_ruby));
     	    	this.imageMur = ImageIO.read(new File(image_wall));
-//    	    	this.imageTortue = ImageIO.read(new File(image_tortue));
+    	    	this.imageTortue1 = ImageIO.read(new File(image_tortue1));
+    	    	this.imageTortue2 = ImageIO.read(new File(image_tortue2));
         	} catch(IOException e) {
         		e.printStackTrace();
         	}    		
     	}
     	else if(nb_Joueurs == 3) {
-    		System.out.println("Jeu à 3");
+    		try {
+    			System.out.println("Jeu à 3");
+    	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
+    	    	this.imageRuby = ImageIO.read(new File(image_ruby));
+    	    	this.imageMur = ImageIO.read(new File(image_wall));
+    	    	this.imageTortue1 = ImageIO.read(new File(image_tortue1));
+    	    	this.imageTortue2 = ImageIO.read(new File(image_tortue2));
+    	    	this.imageTortue3 = ImageIO.read(new File(image_tortue3));
+        	} catch(IOException e) {
+        		e.printStackTrace();
+        	}
     	}
-    	else if(nb_Joueurs == 4) {
-    		System.out.println("Jeu à 4");
+    	else {
+    		try {
+    			System.out.println("Jeu à 4");
+    	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
+    	    	this.imageRuby = ImageIO.read(new File(image_ruby));
+    	    	this.imageMur = ImageIO.read(new File(image_wall));
+    	    	this.imageTortue1 = ImageIO.read(new File(image_tortue1));
+    	    	this.imageTortue2 = ImageIO.read(new File(image_tortue2));
+    	    	this.imageTortue3 = ImageIO.read(new File(image_tortue3));
+    	    	this.imageTortue4 = ImageIO.read(new File(image_tortue4));
+        	} catch(IOException e) {
+        		e.printStackTrace();
+        	}
     	}
 
     }
     
     public void paintComponent(Graphics g){
-        g.drawImage(this.imagePlateau, 0, 0,800, 800, this);
-       
-        
-        g.drawImage(this.imageRuby, 300, 700, widthObject, heightObject,  this);
-//        g.drawImage(imageTortue, 100*positionJoueur1[0], 100*positionJoueur1[1], widthObject, heightObject,  this);
-//        g.drawImage(imageTortue2, 100*positionJoueur2[0], 100*positionJoueur2[1], widthObject, heightObject,  this);
-
-        //Les murs à droite du plateau pour 2 et 3 joueurs
-
-        g.drawImage(imageMur, xMur,   0, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 100, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 200, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 300, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 400, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 500, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 600, widthObject, heightObject,  this);
-        g.drawImage(imageMur, xMur, 700, widthObject, heightObject,  this);
-
+    	g.drawImage(this.imagePlateau, 0, 0,800, 800, this);
+    	Tortues.initialisationTortues();
+    		if (Menu.nb_joueurs<=3) {
+    			g.drawImage(imageMur, xMur,   0, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 100, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 200, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 300, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 400, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 500, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 600, widthObject, heightObject,  this);
+    	        g.drawImage(imageMur, xMur, 700, widthObject, heightObject,  this);
+    		}
+    		if (Menu.nb_joueurs==2) {
+    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 300, 700, widthObject, heightObject,  this);
+    		}
+    		if (Menu.nb_joueurs==3) {
+    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue3, 100*Tortues.positionTortue3[0], 100*Tortues.positionTortue3[1], widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 0, 700, widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 300, 700, widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 600, 700, widthObject, heightObject,  this);
+    		}
+    		if (Menu.nb_joueurs==4) {
+    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue3, 100*Tortues.positionTortue3[0], 100*Tortues.positionTortue3[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue4, 100*Tortues.positionTortue4[0], 100*Tortues.positionTortue4[1], widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 100, 700, widthObject, heightObject,  this);
+    	        g.drawImage(this.imageRuby, 600, 700, widthObject, heightObject,  this);
+    		}
     }
     
 //  public int[][] getPlateau() {

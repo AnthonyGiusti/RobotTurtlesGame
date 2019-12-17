@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 public class InterfaceJeu extends JFrame {
@@ -39,15 +40,15 @@ public class InterfaceJeu extends JFrame {
 	private JPanel centerPanel() {
 //		Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
 		if(Menu.nb_joueurs == 2) {
-			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
+			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", null, null);
 			return plateau;
 		}
 		if(Menu.nb_joueurs == 3) {
-			Plateau plateau = new Plateau(3, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png"); //, "turtle3.png");
+			Plateau plateau = new Plateau(3, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", "turtle3.png", null);
 			return plateau;
 		}
 		else {
-			Plateau plateau = new Plateau(4, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png"); //,"turtle3.png", "turtle4.png");
+			Plateau plateau = new Plateau(4, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", "turtle3.png", "turtle4.png");
 			return plateau;
 		}
 	}

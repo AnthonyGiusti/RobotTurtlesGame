@@ -78,7 +78,7 @@ public class Menu extends JFrame{
 			public void actionPerformed(ActionEvent e2) {
 				nb_joueurs = 3;
 				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
-				//				jouerA3Listener(e2);
+				jouerA3Listener(e2);
 			}
 		});
 		boutons.add(jouerA3);
@@ -91,9 +91,10 @@ public class Menu extends JFrame{
 		jouerA4.setBackground(Color.lightGray);
 		jouerA4.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e4) {
+			public void actionPerformed(ActionEvent e3) {
 				nb_joueurs = 4;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");				
+				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
+				jouerA4Listener(e3);
 			}
 		});
 		boutons.add(jouerA4);
@@ -121,11 +122,11 @@ public class Menu extends JFrame{
 	}
 	
 	private void jouerA3Listener(ActionEvent e2) {
-//		InterfaceJeuA3 interfaceJeuA3 = new InterfaceJeuA3();
+		InterfaceJeu interfaceJeuA3 = new InterfaceJeu();
 	}
 	
 	private void jouerA4Listener(ActionEvent e3) {
-//		InterfaceJeuA4 = new InterfaceJeauA4();
+		InterfaceJeu interfaceJeuA4 = new InterfaceJeu();
 	}
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
 		JFrame fenetreRegles = new JFrame();
