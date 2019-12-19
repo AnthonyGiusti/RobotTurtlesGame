@@ -165,8 +165,8 @@ public class InterfaceJeu extends JFrame {
 		try {
 		//Fonction permettant de construire un mur
 		Object[] type = {"Mur de pierre", "Mur de glace"};
-		Object[] ligne = {"0","1","2","3","4","5","6","7"};
-		Object[] colonne = {"0","1","2","3","4","5","6","7"};
+		Object[] ligne = {"1","2","3","4","5","6","7","8"};
+		Object[] colonne = {"1","2","3","4","5","6","7","8"};
 		JOptionPane construMur = new JOptionPane();
 		Object selectedType = construMur.showInputDialog(this, "Choisissez le type de mur :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null,type, type[0]);
