@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Plateau extends JPanel{
     private int[][] plateau = new int[8][8];
 	
@@ -73,14 +74,10 @@ public class Plateau extends JPanel{
     	g.drawImage(this.imagePlateau, 0, 0,800, 800, this);
     	Tortues.initialisationTortues();
     		if (Menu.nb_joueurs<=3) {
-    			g.drawImage(imageMur, xMur,   0, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 100, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 200, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 300, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 400, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 500, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 600, widthObject, heightObject,  this);
-    	        g.drawImage(imageMur, xMur, 700, widthObject, heightObject,  this);
+    			for(int i = 0; i<=700; i= i+100) {
+    				g.drawImage(imageMur, xMur,   i, widthObject, heightObject,  this);
+    			}
+
     		}
     		if (Menu.nb_joueurs==2) {
     			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
