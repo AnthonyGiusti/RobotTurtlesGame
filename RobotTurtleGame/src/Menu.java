@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Menu extends JFrame{
 
 	Color transparent = new Color(0,0,0,50);
@@ -61,7 +62,6 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e1) {
 				nb_joueurs = 2;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
 				jouerA2Listener(e1);
 			}
 		});
@@ -77,7 +77,6 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e2) {
 				nb_joueurs = 3;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
 				jouerA3Listener(e2);
 			}
 		});
@@ -93,7 +92,6 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e3) {
 				nb_joueurs = 4;
-				System.out.println("Commencer une partie à "+ nb_joueurs +" joueurs");
 				jouerA4Listener(e3);
 			}
 		});
@@ -117,7 +115,7 @@ public class Menu extends JFrame{
 		return boutons;
 	}
 	
-	private void jouerA2Listener(ActionEvent e1) {		//Ne fait rien pour l'instant
+	private void jouerA2Listener(ActionEvent e1) {		//Permet l'affichage lors de clic sur lancer une partie à 2 
 		InterfaceJeu interfaceJeuA2 = new InterfaceJeu();
 	}
 	
@@ -128,10 +126,12 @@ public class Menu extends JFrame{
 	private void jouerA4Listener(ActionEvent e3) {
 		InterfaceJeu interfaceJeuA4 = new InterfaceJeu();
 	}
+	
+	@SuppressWarnings("static-access")
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
 		JFrame fenetreRegles = new JFrame();
 		Fond panRegles = new Fond("regles.png", "Regles");
-GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsEnvironment.getLocalGraphicsEnvironment();
 		
 		fenetreRegles.setTitle("Règles du jeu");
 		fenetreRegles.setExtendedState(fenetreRegles.getExtendedState() | fenetreRegles.MAXIMIZED_BOTH);
