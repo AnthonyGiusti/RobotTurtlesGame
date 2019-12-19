@@ -20,11 +20,13 @@ public class Fond extends JPanel {
 		this.typeDuFond = type_du_fond;
 	}
 	
-  @Override public void paintComponent(Graphics g){
+  @Override 
+  public void paintComponent(Graphics g){
 		g.drawImage(this.background, 0, 0, this.getWidth(), this.getHeight(), (JPanel) this);		
 	}
   
-  @Override public String toString() {
+  @Override 
+  public String toString() {
 	  return this.typeDuFond;
   }
 }

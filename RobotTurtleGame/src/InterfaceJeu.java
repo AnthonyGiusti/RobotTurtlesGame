@@ -4,11 +4,13 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -67,7 +69,6 @@ public class InterfaceJeu extends JFrame {
 		completerProgramme.setPreferredSize(new Dimension(300,30));
 		completerProgramme.setBackground(Color.lightGray);
 		completerProgramme.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e1) {
 				completerProgrammeListener(e1);
@@ -82,7 +83,6 @@ public class InterfaceJeu extends JFrame {
 		construireMur.setBackground(Color.lightGray);
 		//actionlistener
 		construireMur.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e2) {
 				construireMurListener(e2);
@@ -96,7 +96,6 @@ public class InterfaceJeu extends JFrame {
 		executerProgramme.setPreferredSize(new Dimension(300,30));
 		executerProgramme.setBackground(Color.lightGray);
 		executerProgramme.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -163,30 +162,31 @@ public class InterfaceJeu extends JFrame {
 	
 	@SuppressWarnings("static-access")
 	private void construireMurListener(ActionEvent e2) {
+		try {
 		//Fonction permettant de construire un mur
 		Object[] type = {"Mur de pierre", "Mur de glace"};
 		Object[] ligne = {"0","1","2","3","4","5","6","7"};
 		Object[] colonne = {"0","1","2","3","4","5","6","7"};
 		JOptionPane construMur = new JOptionPane();
-		Object selectedType = construMur.showInputDialog(this,
-				"Choisissez le type de mur :", "Contruire un mur",
-				JOptionPane.INFORMATION_MESSAGE, null,
-				type, type[0]);
+		Object selectedType = construMur.showInputDialog(this, "Choisissez le type de mur :", "Contruire un mur",
+				JOptionPane.INFORMATION_MESSAGE, null,type, type[0]);
 		Object selectedLigne = construMur.showInputDialog(this,
 				"Choisissez la ligne sur laquelle vous voulez le poser :", "Contruire un mur",
-				JOptionPane.INFORMATION_MESSAGE, null,
-				ligne, ligne[0]);
+				JOptionPane.INFORMATION_MESSAGE, null, ligne, ligne[0]);
 		Object selectedColonne = construMur.showInputDialog(this,
 				"Choisissez la colonne sur laquelle vous voulez le poser :", "Contruire un mur",
-				JOptionPane.INFORMATION_MESSAGE, null,
-				colonne, colonne[0]);
+				JOptionPane.INFORMATION_MESSAGE, null, colonne, colonne[0]);
 //		if (isCaseFree(selectedLigne, selectedColonne) == true) {
 //			dessiner mur
 //		}
 //		else {
 //			JOptionPane.showMessageDialog(this, "Il y a déjà un mur sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
 //		}			
+		}catch(HeadlessException e) {
+			e.printStackTrace();
+		}
 	}
+		
 	
 	private void executerProgrammeListener(ActionEvent e3){
 		//Classe ou fonction permettant l'execution du programme
@@ -207,9 +207,35 @@ public class InterfaceJeu extends JFrame {
 		return emptyTop;
 	}
 	
-	private JPanel leftPanel() {						//Panneau transparent permettant un poqitionnement des boutons plus simple
-		JPanel cartes = new JPanel(new GridLayout(2,2,0,35));
-		
+	private JPanel leftPanel() {						
+		JPanel cartes = new JPanel();
+		if(Menu.nb_joueurs == 2) {
+			cartes.setLayout(new GridLayout(2,1,0,50));
+			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			cartes.add(bleu);
+			DosDeCarte jaune = new DosDeCarte("DosCarteJaune.png");
+			cartes.add(jaune);
+		}
+		if(Menu.nb_joueurs == 3) {
+			cartes.setLayout(new GridLayout(3,1,0,50));
+			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			cartes.add(bleu);
+			DosDeCarte jaune = new DosDeCarte("DosCarteJaune.png");
+			cartes.add(jaune);
+			DosDeCarte rouge = new DosDeCarte("DosCarteRouge.png");
+			cartes.add(rouge);
+		}
+		if(Menu.nb_joueurs == 4) {
+			cartes.setLayout(new GridLayout(4,1,0,50));
+			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			cartes.add(bleu);	
+			DosDeCarte jaune = new DosDeCarte("DosCarteJaune.png");
+			cartes.add(jaune);			
+			DosDeCarte rouge = new DosDeCarte("DosCarteRouge.png");
+			cartes.add(rouge);
+			DosDeCarte violet = new DosDeCarte("DosCarteViolet.png");
+			cartes.add(violet);
+		}
 		cartes.setPreferredSize(new Dimension(560, 0));
 		cartes.setBackground(transparent);
 		return cartes;
