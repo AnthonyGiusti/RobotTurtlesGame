@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class InterfaceJeu extends JFrame {
@@ -160,9 +161,31 @@ public class InterfaceJeu extends JFrame {
 		completionProgramme.setVisible(true);
 	}
 	
+	@SuppressWarnings("static-access")
 	private void construireMurListener(ActionEvent e2) {
-		//Classe permettant de construire un mur ou fonction permettant de construire un mur
-		
+		//Fonction permettant de construire un mur
+		Object[] type = {"Mur de pierre", "Mur de glace"};
+		Object[] ligne = {"0","1","2","3","4","5","6","7"};
+		Object[] colonne = {"0","1","2","3","4","5","6","7"};
+		JOptionPane construMur = new JOptionPane();
+		Object selectedType = construMur.showInputDialog(this,
+				"Choisissez le type de mur :", "Contruire un mur",
+				JOptionPane.INFORMATION_MESSAGE, null,
+				type, type[0]);
+		Object selectedLigne = construMur.showInputDialog(this,
+				"Choisissez la ligne sur laquelle vous voulez le poser :", "Contruire un mur",
+				JOptionPane.INFORMATION_MESSAGE, null,
+				ligne, ligne[0]);
+		Object selectedColonne = construMur.showInputDialog(this,
+				"Choisissez la colonne sur laquelle vous voulez le poser :", "Contruire un mur",
+				JOptionPane.INFORMATION_MESSAGE, null,
+				colonne, colonne[0]);
+//		if (isCaseFree(selectedLigne, selectedColonne) == true) {
+//			dessiner mur
+//		}
+//		else {
+//			JOptionPane.showMessageDialog(this, "Il y a déjà un mur sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
+//		}			
 	}
 	
 	private void executerProgrammeListener(ActionEvent e3){
