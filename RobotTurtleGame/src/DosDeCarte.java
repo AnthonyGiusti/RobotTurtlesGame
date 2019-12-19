@@ -30,6 +30,5 @@ public class DosDeCarte extends JPanel{
 		if(Menu.nb_joueurs == 4) {
 			g.drawImage(this.dosCarte, 125, 25, width, height, (JPanel) this);
 		}
-			
 	}
 }
