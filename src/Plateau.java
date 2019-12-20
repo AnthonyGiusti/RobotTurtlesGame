@@ -30,7 +30,7 @@ public class Plateau extends JPanel{
 	public Plateau(int nb_Joueurs, String image_plateau, String image_ruby, String image_wall, String image_tortue1, String image_tortue2,String image_tortue3, String image_tortue4) {
     	if(nb_Joueurs == 2) {
     		try {
-    			System.out.println("Jeu à 2");
+    			System.out.println("Jeu Ã  2");
     	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
     	    	this.imageRuby = ImageIO.read(new File(image_ruby));
     	    	this.imageMur = ImageIO.read(new File(image_wall));
@@ -42,7 +42,7 @@ public class Plateau extends JPanel{
     	}
     	else if(nb_Joueurs == 3) {
     		try {
-    			System.out.println("Jeu à 3");
+    			System.out.println("Jeu Ã  3");
     	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
     	    	this.imageRuby = ImageIO.read(new File(image_ruby));
     	    	this.imageMur = ImageIO.read(new File(image_wall));
@@ -55,7 +55,7 @@ public class Plateau extends JPanel{
     	}
     	else {
     		try {
-    			System.out.println("Jeu à 4");
+    			System.out.println("Jeu Ã  4");
     	    	this.imagePlateau = ImageIO.read(new File(image_plateau));
     	    	this.imageRuby = ImageIO.read(new File(image_ruby));
     	    	this.imageMur = ImageIO.read(new File(image_wall));

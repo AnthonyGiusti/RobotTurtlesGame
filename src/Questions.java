@@ -11,9 +11,9 @@
  *
  *Explication de comment se servir des branches 	V
  *
- *A quoi correspoint "this" à la fin de drawImage	V 
+ *A quoi correspoint "this" Ã  la fin de drawImage	V
  *
- *Aide pour implémenter la classe tortue dans plateau
+ *Aide pour implÃ©menter la classe tortue dans plateau
  */
 public class Questions {
 

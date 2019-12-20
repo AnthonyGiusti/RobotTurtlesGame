@@ -10,8 +10,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -22,12 +20,12 @@ public class InterfaceJeu extends JFrame {
 	
 	public InterfaceJeu() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
-		this.setTitle("Partie � 2 joueurs");
+		this.setTitle("Partie à 2 joueurs");
 		this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
 		this.setLocationRelativeTo(null);
 		this.setAlwaysOnTop(true);
 		
-		Fond panJeu = new Fond("fondJeu.jpg", "jeu");
+		Fond panJeu = new Fond("images/fondJeu.jpg", "jeu");
 		
 		panJeu.setLayout(new BorderLayout());
 		panJeu.add(centerPanel(), BorderLayout.CENTER);	
@@ -42,15 +40,15 @@ public class InterfaceJeu extends JFrame {
 	//Completer 
 	private JPanel centerPanel() {
 		if(Menu.nb_joueurs == 2) {
-			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", null, null);
+			Plateau plateau = new Plateau(2, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", null, null);
 			return plateau;
 		}
 		if(Menu.nb_joueurs == 3) {
-			Plateau plateau = new Plateau(3, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", "turtle4.png", null);
+			Plateau plateau = new Plateau(3, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "turtle4.png", null);
 			return plateau;
 		}
 		else {
-			Plateau plateau = new Plateau(4, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", "turtle4.png", "turtle3.png");
+			Plateau plateau = new Plateau(4, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", "images/turtle3.png");
 			return plateau;
 		}
 	}
@@ -152,7 +150,7 @@ public class InterfaceJeu extends JFrame {
 	private void completerProgrammeListener(ActionEvent e1) {
 		//Classe permettant d'amener  à la completion du programme
 		JFrame completionProgramme = new JFrame();
-		completionProgramme.setTitle("Compl�ter le programme");
+		completionProgramme.setTitle("Compléter le programme");
 		completionProgramme.setSize(560,1000);
 		completionProgramme.setLocation(1360, 0);
 		completionProgramme.setAlwaysOnTop(true);
@@ -210,29 +208,29 @@ public class InterfaceJeu extends JFrame {
 		JPanel cartes = new JPanel();
 		if(Menu.nb_joueurs == 2) {
 			cartes.setLayout(new GridLayout(2,1,0,50));
-			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
 			cartes.add(bleu);
-			DosDeCarte rouge = new DosDeCarte("DosCarteRouge.png");
+			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
 		}
 		if(Menu.nb_joueurs == 3) {
 			cartes.setLayout(new GridLayout(3,1,0,50));
-			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
 			cartes.add(bleu);
-			DosDeCarte rouge = new DosDeCarte("DosCarteRouge.png");
+			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
-			DosDeCarte violet = new DosDeCarte("DosCarteViolet.png");
+			DosDeCarte violet = new DosDeCarte("images/DosCarteViolet.png");
 			cartes.add(violet);
 		}
 		if(Menu.nb_joueurs == 4) {
 			cartes.setLayout(new GridLayout(4,1,0,50));
-			DosDeCarte bleu = new DosDeCarte("DosCarteBleu.png");
+			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
 			cartes.add(bleu);				
-			DosDeCarte rouge = new DosDeCarte("DosCarteRouge.png");
+			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
-			DosDeCarte violet = new DosDeCarte("DosCarteViolet.png");
+			DosDeCarte violet = new DosDeCarte("images/DosCarteViolet.png");
 			cartes.add(violet);
-			DosDeCarte orange = new DosDeCarte("DosCarteJaune.png");
+			DosDeCarte orange = new DosDeCarte("images/DosCarteJaune.png");
 			cartes.add(orange);
 		}
 		cartes.setPreferredSize(new Dimension(560, 0));

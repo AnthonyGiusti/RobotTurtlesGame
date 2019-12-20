@@ -28,7 +28,7 @@ public class Menu extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Ferme quand on appuie sur la croix rouge
 		this.setAlwaysOnTop(true);								//Place la fenetre au dessus de celles ouvertes
 		
-		Fond panMenu = new Fond("backgroundAndLogo.png", "Menu");
+		Fond panMenu = new Fond("images/backgroundAndLogo.png", "Menu");
 		System.out.println(panMenu.toString());
 		panMenu.setLayout(new BorderLayout());						//Definit le panneau comme un borderLayout 
 		
@@ -130,10 +130,10 @@ public class Menu extends JFrame{
 	@SuppressWarnings("static-access")
 	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "r�gles", ouvre une nouvelle fenetre qui affiche les r�gles
 		JFrame fenetreRegles = new JFrame();
-		Fond panRegles = new Fond("regles.png", "Regles");
+		Fond panRegles = new Fond("images/regles.png", "Regles");
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
 		
-		fenetreRegles.setTitle("R�gles du jeu");
+		fenetreRegles.setTitle("Règles du jeu");
 		fenetreRegles.setExtendedState(fenetreRegles.getExtendedState() | fenetreRegles.MAXIMIZED_BOTH);
 		fenetreRegles.setLocationRelativeTo(null);
 		fenetreRegles.setAlwaysOnTop(true);
