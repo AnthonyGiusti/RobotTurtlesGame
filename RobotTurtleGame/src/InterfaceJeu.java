@@ -22,7 +22,7 @@ public class InterfaceJeu extends JFrame {
 	
 	public InterfaceJeu() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
-		this.setTitle("Partie à 2 joueurs");
+		this.setTitle("Partie ï¿½ 2 joueurs");
 		this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
 		this.setLocationRelativeTo(null);
 		this.setAlwaysOnTop(true);
@@ -41,7 +41,6 @@ public class InterfaceJeu extends JFrame {
 	}
 	//Completer 
 	private JPanel centerPanel() {
-//		Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png");
 		if(Menu.nb_joueurs == 2) {
 			Plateau plateau = new Plateau(2, "Plateau.png", "RUBY.png", "WALL.png", "turtle1.png", "turtle2.png", null, null);
 			return plateau;
@@ -57,13 +56,13 @@ public class InterfaceJeu extends JFrame {
 	}
 	
 //////////////////////////////////////////////////////////////////////////////
-// Intérieur du Panel droit
+// Intï¿½rieur du Panel droit
 	private JPanel intoRightPanel(){
 		JPanel boutons = new JPanel(new GridLayout(3, 1, 0, 30));
 		boutons.setBackground(transparent);
 		boutons.setPreferredSize(new Dimension(560,0));
 		
-		JButton completerProgramme = new JButton("Compléter le programme");
+		JButton completerProgramme = new JButton("ComplÃ©ter le programme");
 		completerProgramme.setForeground(Color.white);
 		completerProgramme.setFont(new Font("Arial",Font.CENTER_BASELINE,18));
 		completerProgramme.setPreferredSize(new Dimension(300,30));
@@ -90,7 +89,7 @@ public class InterfaceJeu extends JFrame {
 		});
 		boutons.add(construireMur);
 		
-		JButton executerProgramme = new JButton("Exécuter le programme");
+		JButton executerProgramme = new JButton("ExÃ©cuter le programme");
 		executerProgramme.setForeground(Color.white);
 		executerProgramme.setFont(new Font("Arial",Font.CENTER_BASELINE,18));
 		executerProgramme.setPreferredSize(new Dimension(300,30));
@@ -151,9 +150,9 @@ public class InterfaceJeu extends JFrame {
 
 	
 	private void completerProgrammeListener(ActionEvent e1) {
-		//Classe permettant d'amener  à la completion du programme
+		//Classe permettant d'amener  Ã  la completion du programme
 		JFrame completionProgramme = new JFrame();
-		completionProgramme.setTitle("Compléter le programme");
+		completionProgramme.setTitle("Complï¿½ter le programme");
 		completionProgramme.setSize(560,1000);
 		completionProgramme.setLocation(1360, 0);
 		completionProgramme.setAlwaysOnTop(true);
@@ -180,7 +179,7 @@ public class InterfaceJeu extends JFrame {
 //			dessiner mur
 //		}
 //		else {
-//			JOptionPane.showMessageDialog(this, "Il y a déjà un mur sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
+//			JOptionPane.showMessageDialog(this, "Il y a dï¿½jï¿½ un mur sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
 //		}			
 		}catch(HeadlessException e) {
 			e.printStackTrace();
@@ -196,7 +195,7 @@ public class InterfaceJeu extends JFrame {
 		JPanel emptyBottom = new JPanel();
 		emptyBottom.setPreferredSize(new Dimension(0,100));
 		emptyBottom.setBackground(transparent);
-		//Implémenter la manière dont on affiche 
+		//Implï¿½menter la maniÃ¨re dont on affiche 
 		return emptyBottom;
 	}
 	

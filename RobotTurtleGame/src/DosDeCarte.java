@@ -11,7 +11,7 @@ public class DosDeCarte extends JPanel{
 	private Image dosCarte;
 	private int width = 75;
 	private int height = 100;
-	
+		
 	public DosDeCarte(String nom_du_fichier) {
 		try {
 			this.dosCarte = ImageIO.read(new File(nom_du_fichier));

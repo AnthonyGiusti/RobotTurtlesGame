@@ -34,11 +34,11 @@ public class Menu extends JFrame{
 		
 		panMenu.add(createButtons(), BorderLayout.CENTER);			//Place les boutons du menu au centre de la fenetre
 		
-		panMenu.add(createCredits(), BorderLayout.SOUTH);			//Place les crédits en bas de la fenetre
+		panMenu.add(createCredits(), BorderLayout.SOUTH);			//Place les crï¿½dits en bas de la fenetre
 		
-		panMenu.add(emptyLeft(), BorderLayout.WEST);				//Place une layout vide à gauche de la fenetre
+		panMenu.add(emptyLeft(), BorderLayout.WEST);				//Place une layout vide ï¿½ gauche de la fenetre
 		
-		panMenu.add(emptyRight(), BorderLayout.EAST);				//Place une layout vide à droite de la fenetre
+		panMenu.add(emptyRight(), BorderLayout.EAST);				//Place une layout vide ï¿½ droite de la fenetre
 		
 		panMenu.add(emptyTop(), BorderLayout.NORTH);				//Place une layout vide en haut de la fenetre
 
@@ -49,16 +49,16 @@ public class Menu extends JFrame{
 	}
 	
 
-	private JPanel createButtons() {										//Cette fonction a pour but de créer les 4 boutons de notre menu
+	private JPanel createButtons() {										//Cette fonction a pour but de crï¿½er les 4 boutons de notre menu
 		JPanel boutons = new JPanel(new GridLayout(4, 1, 0, 30));
 		boutons.setBackground(transparent);
 		
-		JButton jouerA2 = new JButton("Lancer une partie à 2 joueurs");
+		JButton jouerA2 = new JButton("Lancer une partie Ã  2 joueurs");
 		jouerA2.setForeground(vertFonce);
 		jouerA2.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
 		jouerA2.setPreferredSize(new Dimension(400, 45));
 		jouerA2.setBackground(Color.lightGray);
-		jouerA2.addActionListener(new ActionListener() {					//Quand on clique sur le bouton "Lancer une partie à 2 joueurs" execute la fonction jouerA2Listener 
+		jouerA2.addActionListener(new ActionListener() {					//Quand on clique sur le bouton "Lancer une partie ï¿½ 2 joueurs" execute la fonction jouerA2Listener 
 			@Override
 			public void actionPerformed(ActionEvent e1) {
 				nb_joueurs = 2;
@@ -68,7 +68,7 @@ public class Menu extends JFrame{
 		boutons.add(jouerA2);												//Ajoute boutonA2 au panneau boutons
 		
 		
-		JButton jouerA3 = new JButton("Lancer une partie à 3 joueurs");
+		JButton jouerA3 = new JButton("Lancer une partie Ã  3 joueurs");
 		jouerA3.setPreferredSize(new Dimension(400, 45));
 		jouerA3.setForeground(vertFonce);
 		jouerA3.setFont(new Font("Arial",Font.CENTER_BASELINE,24));//Definit la taille du bouton cliquable
@@ -83,7 +83,7 @@ public class Menu extends JFrame{
 		boutons.add(jouerA3);
 		
 
-		JButton jouerA4 = new JButton("Lancer une partie à 4 joueurs");
+		JButton jouerA4 = new JButton("Lancer une partie Ã  4 joueurs");
 		jouerA4.setPreferredSize(new Dimension(400, 45));
 		jouerA4.setForeground(vertFonce);
 		jouerA4.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
@@ -97,7 +97,7 @@ public class Menu extends JFrame{
 		});
 		boutons.add(jouerA4);
 
-		JButton regles = new JButton("Règles du jeu");
+		JButton regles = new JButton("RÃ¨gles du jeu");
 		regles.setPreferredSize(new Dimension(400, 45));
 		regles.setForeground(vertFonce);
 		regles.setFont(new Font("Arial",Font.CENTER_BASELINE,24));
@@ -106,7 +106,7 @@ public class Menu extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e4) {
 				reglesListener(e4);
-				System.out.println("Règles");
+				System.out.println("RÃ¨gles");
 				
 			}
 		});
@@ -115,7 +115,7 @@ public class Menu extends JFrame{
 		return boutons;
 	}
 	
-	private void jouerA2Listener(ActionEvent e1) {		//Permet l'affichage lors de clic sur lancer une partie à 2 
+	private void jouerA2Listener(ActionEvent e1) {		//Permet l'affichage lors de clic sur lancer une partie ï¿½ 2 
 		InterfaceJeu interfaceJeuA2 = new InterfaceJeu();
 	}
 	
@@ -128,12 +128,12 @@ public class Menu extends JFrame{
 	}
 	
 	@SuppressWarnings("static-access")
-	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "règles", ouvre une nouvelle fenetre qui affiche les règles
+	private void reglesListener(ActionEvent e4 ) {		//Lorsqu'on clique sur le bouton "rï¿½gles", ouvre une nouvelle fenetre qui affiche les rï¿½gles
 		JFrame fenetreRegles = new JFrame();
 		Fond panRegles = new Fond("regles.png", "Regles");
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
 		
-		fenetreRegles.setTitle("Règles du jeu");
+		fenetreRegles.setTitle("Rï¿½gles du jeu");
 		fenetreRegles.setExtendedState(fenetreRegles.getExtendedState() | fenetreRegles.MAXIMIZED_BOTH);
 		fenetreRegles.setLocationRelativeTo(null);
 		fenetreRegles.setAlwaysOnTop(true);
@@ -142,7 +142,7 @@ public class Menu extends JFrame{
 		
 	}
 	
-	private JPanel createCredits() {													//Panneau situé au sud de notre fenetre, indiquant qui a participé à ce projet
+	private JPanel createCredits() {													//Panneau situï¿½ au sud de notre fenetre, indiquant qui a participï¿½ ï¿½ ce projet
 //		Color cBg = new Color(255, 255, 255, 100);
 		
 		JPanel credits = new JPanel(new FlowLayout(FlowLayout.LEFT));
