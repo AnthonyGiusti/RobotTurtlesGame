@@ -5,7 +5,7 @@ public class Tortues {
 	public static int [] positionTortue4 = new int [2];
 	
 	public static void initialisationTortues() {
-		if (Menu.nb_joueurs==2) {
+		if (Menu.nb_joueurs == 2) {
     		positionTortue1 = new int[] {1,0};
     		positionTortue2 = new int[] {5,0};
     	}

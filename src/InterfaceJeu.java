@@ -44,7 +44,7 @@ public class InterfaceJeu extends JFrame {
 			return plateau;
 		}
 		if(Menu.nb_joueurs == 3) {
-			Plateau plateau = new Plateau(3, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "turtle4.png", null);
+			Plateau plateau = new Plateau(3, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", null);
 			return plateau;
 		}
 		else {
@@ -153,8 +153,14 @@ public class InterfaceJeu extends JFrame {
 		completionProgramme.setTitle("Compléter le programme");
 		completionProgramme.setSize(560,1000);
 		completionProgramme.setLocation(1360, 0);
+		completionProgramme.setContentPane(new Fond("images/fondJeu.jpg", "jeu"));
 		completionProgramme.setAlwaysOnTop(true);
 		completionProgramme.setVisible(true);
+
+		Deplacement deplacement = new Deplacement();
+
+
+
 	}
 	
 	@SuppressWarnings("static-access")
