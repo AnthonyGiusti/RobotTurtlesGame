@@ -76,7 +76,7 @@ public class Deplacement extends JFrame {
                 return false;
             }
         }
-        if (Menu.nb_joueurs>2) {
+        else if (Menu.nb_joueurs==3) {
             if (emplacement.equals(Tortues.positionTortue3)) {
                 return false;
             }
@@ -84,8 +84,11 @@ public class Deplacement extends JFrame {
                 return false;
             }
         }
-        if (Menu.nb_joueurs==4) {
-            if (emplacement.equals(Tortues.positionTortue4)) {
+        else if (Menu.nb_joueurs==4) {
+            if (emplacement.equals(Tortues.positionTortue3)) {
+                return false;
+            }
+            else if (emplacement.equals(Tortues.positionTortue4)) {
                 return false;
             }
             else if ((emplacement[0]==1 || emplacement[0]==6) && emplacement[1]==7) { // rubis
@@ -93,5 +96,5 @@ public class Deplacement extends JFrame {
             }
         }
         return true;
-    } // AJOUTER LE TEST POUR LES NOUVEAUX MURS !!!
+    } // AJOUTER LE TEST POUR LES NOUVEAUX MURS !!! ne marche pas pour les tortues idk why
 }

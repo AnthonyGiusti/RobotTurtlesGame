@@ -180,13 +180,16 @@ public class InterfaceJeu extends JFrame {
 				"Choisissez la colonne sur laquelle vous voulez le poser :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null, colonne, colonne[0]);
 
-		int[] emplacement = {Integer.parseInt(selectedLigne), Integer.parseInt(selectedColonne)};
+		int selectedLigneNb = (Integer.parseInt(selectedLigne))-1;
+		int selectedColonneNb = (Integer.parseInt(selectedColonne))-1;
+
+		int[] emplacement = {selectedColonneNb,selectedLigneNb};
 
 		if (Deplacement.isCaseFree(emplacement) == true) {
-			System.out.println("Construction du mur");
+			System.out.println("Construction du mur"+selectedColonneNb+selectedLigneNb);
 		}
 		else {
-			JOptionPane.showMessageDialog(this, "Il y a déjà un mur sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, "Il y a déjà quelque chose sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
 		}
 		}catch(HeadlessException e) {
 			e.printStackTrace();
