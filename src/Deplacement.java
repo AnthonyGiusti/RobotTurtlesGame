@@ -66,4 +66,32 @@ public class Deplacement extends JFrame {
         cartes.setBackground(transparent);
         return cartes;
     }*/
+
+    public static boolean isCaseFree(int[] emplacement) {
+        if (emplacement.equals(Tortues.positionTortue1) || emplacement.equals(Tortues.positionTortue2)) {
+            return false;
+        }
+        if (Menu.nb_joueurs==2) {
+            if ((emplacement[0]==3 && emplacement[1]==7) || emplacement[0]==7) { // rubis et colonne de murs
+                return false;
+            }
+        }
+        if (Menu.nb_joueurs>2) {
+            if (emplacement.equals(Tortues.positionTortue3)) {
+                return false;
+            }
+            else if (((emplacement[0]==3 || emplacement[0]==0 || emplacement[0]==6) && emplacement[1]==7) || emplacement[0]==7) { // rubis et colonne de murs
+                return false;
+            }
+        }
+        if (Menu.nb_joueurs==4) {
+            if (emplacement.equals(Tortues.positionTortue4)) {
+                return false;
+            }
+            else if ((emplacement[0]==1 || emplacement[0]==6) && emplacement[1]==7) { // rubis
+                return false;
+            }
+        }
+        return true;
+    } // AJOUTER LE TEST POUR LES NOUVEAUX MURS !!!
 }
