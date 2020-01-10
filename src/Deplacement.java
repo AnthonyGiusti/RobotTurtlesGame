@@ -104,3 +104,5 @@ public class Deplacement extends JFrame {
         return true;
     }
     }
+
+    //Test
