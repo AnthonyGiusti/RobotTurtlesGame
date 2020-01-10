@@ -171,7 +171,7 @@ public class InterfaceJeu extends JFrame {
 		String[] ligne = {"1","2","3","4","5","6","7","8"};
 		String[] colonne = {"1","2","3","4","5","6","7","8"};
 		JOptionPane construMur = new JOptionPane();
-		Object selectedType = construMur.showInputDialog(this, "Choisissez le type de mur :", "Contruire un mur",
+		String selectedType = (String) construMur.showInputDialog(this, "Choisissez le type de mur :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null, type, type[0]);
 		String selectedLigne = (String) construMur.showInputDialog(this,
 				"Choisissez la ligne sur laquelle vous voulez le poser :", "Contruire un mur",

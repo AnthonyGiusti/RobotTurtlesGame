@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -68,7 +69,7 @@ public class Deplacement extends JFrame {
     }*/
 
     public static boolean isCaseFree(int[] emplacement) {
-        if (emplacement.equals(Tortues.positionTortue1) || emplacement.equals(Tortues.positionTortue2)) {
+        if (Arrays.equals(emplacement, Tortues.positionTortue1) || Arrays.equals(emplacement, Tortues.positionTortue2)) {
             return false;
         }
         if (Menu.nb_joueurs==2) {
@@ -77,7 +78,7 @@ public class Deplacement extends JFrame {
             }
         }
         else if (Menu.nb_joueurs==3) {
-            if (emplacement.equals(Tortues.positionTortue3)) {
+            if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
                 return false;
             }
             else if (((emplacement[0]==3 || emplacement[0]==0 || emplacement[0]==6) && emplacement[1]==7) || emplacement[0]==7) { // rubis et colonne de murs
@@ -85,10 +86,10 @@ public class Deplacement extends JFrame {
             }
         }
         else if (Menu.nb_joueurs==4) {
-            if (emplacement.equals(Tortues.positionTortue3)) {
+            if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
                 return false;
             }
-            else if (emplacement.equals(Tortues.positionTortue4)) {
+            else if (Arrays.equals(emplacement, Tortues.positionTortue4)) {
                 return false;
             }
             else if ((emplacement[0]==1 || emplacement[0]==6) && emplacement[1]==7) { // rubis
@@ -96,5 +97,5 @@ public class Deplacement extends JFrame {
             }
         }
         return true;
-    } // AJOUTER LE TEST POUR LES NOUVEAUX MURS !!! ne marche pas pour les tortues idk why
+    }
 }
