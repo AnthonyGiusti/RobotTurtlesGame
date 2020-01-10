@@ -11,9 +11,10 @@ public class Deplacement extends JFrame {
 
     private int width = 75;
     private int height = 100;
+    private static int i;
 
 
-    Color transparent = new Color(0,0,0,50);//(transparent)
+    Color transparent = new Color(0, 0, 0, 50);//(transparent)
     public static String type_de_fond;
 
     ArrayDeque<String> pileInstructions = new ArrayDeque<>();
@@ -72,30 +73,34 @@ public class Deplacement extends JFrame {
         if (Arrays.equals(emplacement, Tortues.positionTortue1) || Arrays.equals(emplacement, Tortues.positionTortue2)) {
             return false;
         }
-        if (Menu.nb_joueurs==2) {
-            if ((emplacement[0]==3 && emplacement[1]==7) || emplacement[0]==7) { // rubis et colonne de murs
+        if (Menu.nb_joueurs == 2) {
+            if ((emplacement[0] == 3 && emplacement[1] == 7) || emplacement[0] == 7) { // rubis et colonne de murs
                 return false;
             }
-        }
-        else if (Menu.nb_joueurs==3) {
+        } else if (Menu.nb_joueurs == 3) {
             if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
                 return false;
-            }
-            else if (((emplacement[0]==3 || emplacement[0]==0 || emplacement[0]==6) && emplacement[1]==7) || emplacement[0]==7) { // rubis et colonne de murs
+            } else if (((emplacement[0] == 3 || emplacement[0] == 0 || emplacement[0] == 6) && emplacement[1] == 7) || emplacement[0] == 7) { // rubis et colonne de murs
                 return false;
             }
-        }
-        else if (Menu.nb_joueurs==4) {
+        } else if (Menu.nb_joueurs == 4) {
             if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
                 return false;
-            }
-            else if (Arrays.equals(emplacement, Tortues.positionTortue4)) {
+            } else if (Arrays.equals(emplacement, Tortues.positionTortue4)) {
                 return false;
-            }
-            else if ((emplacement[0]==1 || emplacement[0]==6) && emplacement[1]==7) { // rubis
+            } else if ((emplacement[0] == 1 || emplacement[0] == 6) && emplacement[1] == 7) { // rubis
                 return false;
             }
         }
+ /*       else {
+            for(i=0,i<=Mur.nbMur,i++) {
+                if (Arrays.equals(emplacement, Mur.nouveauMur)){
+
+
+                }
+            }
+
+        }*/
         return true;
     }
-}
+    }

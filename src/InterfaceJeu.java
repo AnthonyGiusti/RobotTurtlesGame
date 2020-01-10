@@ -173,9 +173,11 @@ public class InterfaceJeu extends JFrame {
 		JOptionPane construMur = new JOptionPane();
 		String selectedType = (String) construMur.showInputDialog(this, "Choisissez le type de mur :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null, type, type[0]);
+
 		String selectedLigne = (String) construMur.showInputDialog(this,
 				"Choisissez la ligne sur laquelle vous voulez le poser :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null, ligne, ligne[0]);
+
 		String selectedColonne = (String) construMur.showInputDialog(this,
 				"Choisissez la colonne sur laquelle vous voulez le poser :", "Contruire un mur",
 				JOptionPane.INFORMATION_MESSAGE, null, colonne, colonne[0]);
@@ -186,7 +188,10 @@ public class InterfaceJeu extends JFrame {
 		int[] emplacement = {selectedColonneNb,selectedLigneNb};
 
 		if (Deplacement.isCaseFree(emplacement) == true) {
-			System.out.println("Construction du mur"+selectedColonneNb+selectedLigneNb);
+			Mur mur = new Mur(selectedType, selectedLigneNb, selectedColonneNb);
+
+
+			System.out.println("Construction du mur "+selectedColonneNb+selectedLigneNb);
 		}
 		else {
 			JOptionPane.showMessageDialog(this, "Il y a déjà quelque chose sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
