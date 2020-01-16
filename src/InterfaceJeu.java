@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +17,6 @@ import javax.swing.JPanel;
 public class InterfaceJeu extends JFrame {
 	Color transparent = new Color(0,0,0,50);//(transparent)
 	public static String type_de_fond;
-
 	
 	public InterfaceJeu() {
 		GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -40,15 +40,15 @@ public class InterfaceJeu extends JFrame {
 	//Completer 
 	private JPanel centerPanel() {
 		if(Menu.nb_joueurs == 2) {
-			Plateau plateau = new Plateau(2, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", null, null);
+			Plateau plateau = new Plateau(2, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/ICE.png", "images/turtle1.png", "images/turtle2.png", null, null);
 			return plateau;
 		}
 		if(Menu.nb_joueurs == 3) {
-			Plateau plateau = new Plateau(3, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", null);
+			Plateau plateau = new Plateau(3, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/ICE.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", null);
 			return plateau;
 		}
 		else {
-			Plateau plateau = new Plateau(4, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", "images/turtle3.png");
+			Plateau plateau = new Plateau(4, "images/Plateau.png", "images/RUBY.png", "images/WALL.png", "images/ICE.png", "images/turtle1.png", "images/turtle2.png", "images/turtle4.png", "images/turtle3.png");
 			return plateau;
 		}
 	}
@@ -189,9 +189,8 @@ public class InterfaceJeu extends JFrame {
 
 		if (Deplacement.isCaseFree(emplacement) == true) {
 			Mur mur = new Mur(selectedType, selectedLigneNb, selectedColonneNb);
-
-
-			System.out.println("Construction du mur "+selectedColonneNb+selectedLigneNb);
+			Mur.listeMurs.add(mur);
+			System.out.println("Construction du mur "+selectedColonneNb+" "+selectedLigneNb);//test
 		}
 		else {
 			JOptionPane.showMessageDialog(this, "Il y a déjà quelque chose sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
