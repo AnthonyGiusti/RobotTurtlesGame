@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Mur {
-    public static int [] position = new int[2];
+    public int [] position = new int[2];
     public int idMur;
     public int selectedTypeNb;
     public static int nbMur;
@@ -20,12 +20,12 @@ public class Mur {
         System.out.println(idMur);
     }
 
-    public static int[] getPosition() {
+    public int[] getPosition() {
         return position;
     }
 
-    public static void setPosition(int[] nouveauMur) {
-        Mur.position = position;
+    public void setPosition(int[] nouveauMur) {
+        this.position = position;
     }
 
     public int getIdMur() {

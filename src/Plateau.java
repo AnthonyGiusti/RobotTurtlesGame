@@ -76,17 +76,15 @@ public class Plateau extends JPanel{
     public void paintComponent(Graphics g){
     	g.drawImage(this.imagePlateau, 0, 0,800, 800, this);
     	if (Mur.nbMur!=0) {
-    		for(int i=0;i<=Mur.nbMur;i++) {
+    		for(int i=0;i<Mur.nbMur;i++) {
     			Mur mur = Mur.listeMurs.get(i);
     			mur.position=mur.getPosition();
     			mur.selectedTypeNb=mur.getSelectedTypeNb();
     			if (mur.selectedTypeNb==3) {
 					g.drawImage(imageMurBois, 100*mur.position[0],  100*mur.position[1], widthObject, heightObject,  this);
-					System.out.println("mur en bois dessiné");//test
 				}
     			else {
 					g.drawImage(imageMurGlace, 100*mur.position[0],   100*mur.position[1], widthObject, heightObject,  this);
-					System.out.println("mur en glace dessiné");//test
 				}
     		}
     	}
