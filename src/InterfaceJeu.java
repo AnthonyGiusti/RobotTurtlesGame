@@ -3,10 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class InterfaceJeu extends JFrame {
 	Color transparent = new Color(0,0,0,50);//(transparent)
@@ -215,35 +212,87 @@ public class InterfaceJeu extends JFrame {
 		emptyTop.setBackground(transparent);
 		return emptyTop;
 	}
-	
-	private JPanel leftPanel() {						
+
+	private JPanel leftPanel() {
 		JPanel cartes = new JPanel();
 		if(Menu.nb_joueurs == 2) {
-			cartes.setLayout(new GridLayout(2,1,0,50));
+			cartes.setLayout(new GridLayout(2,2,0,150));
+
 			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
 			cartes.add(bleu);
+
+			JLabel compteurBleu = new JLabel("ABC"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurBleu.setForeground(Color.white);
+			compteurBleu.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurBleu);
+
 			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
+
+			JLabel compteurRouge = new JLabel("Compteurs cartes dans programme"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurRouge.setForeground(Color.white);
+			compteurRouge.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurRouge);
 		}
 		if(Menu.nb_joueurs == 3) {
 			cartes.setLayout(new GridLayout(3,1,0,50));
 			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
 			cartes.add(bleu);
+
+			JLabel compteurBleu = new JLabel("ABC"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurBleu.setForeground(Color.white);
+			compteurBleu.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurBleu);
+
 			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
+
+			JLabel compteurRouge = new JLabel("Compteurs cartes dans programme"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurRouge.setForeground(Color.white);
+			compteurRouge.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurRouge);
+
 			DosDeCarte violet = new DosDeCarte("images/DosCarteViolet.png");
 			cartes.add(violet);
+
+			JLabel compteurViolet = new JLabel("Compteur2"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurViolet.setForeground(Color.white);
+			compteurViolet.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurViolet);
 		}
 		if(Menu.nb_joueurs == 4) {
 			cartes.setLayout(new GridLayout(4,1,0,50));
 			DosDeCarte bleu = new DosDeCarte("images/DosCarteBleu.png");
-			cartes.add(bleu);				
+			cartes.add(bleu);
+
+			JLabel compteurBleu = new JLabel("Compteur1"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurBleu.setForeground(Color.white);
+			compteurBleu.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurBleu);
+
 			DosDeCarte rouge = new DosDeCarte("images/DosCarteRouge.png");
 			cartes.add(rouge);
+
+			JLabel compteurRouge = new JLabel("Compteur2"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurRouge.setForeground(Color.white);
+			compteurRouge.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurRouge);
+
 			DosDeCarte violet = new DosDeCarte("images/DosCarteViolet.png");
 			cartes.add(violet);
+
+			JLabel compteurViolet = new JLabel("Compteur3"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurViolet.setForeground(Color.white);
+			compteurViolet.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurViolet);
+
 			DosDeCarte orange = new DosDeCarte("images/DosCarteJaune.png");
 			cartes.add(orange);
+
+			JLabel compteurOrange = new JLabel("Compteur4"); // Ajouter la bonne fonction pour afficher le compteur du nombre de cartes dans le programme du joueur
+			compteurOrange.setForeground(Color.white);
+			compteurOrange.setFont(new Font("Arial",Font.BOLD,50));
+			cartes.add(compteurOrange);
 		}
 		cartes.setPreferredSize(new Dimension(560, 0));
 		cartes.setBackground(transparent);
