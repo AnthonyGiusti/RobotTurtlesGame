@@ -1,10 +1,15 @@
-public class Tortues {
+public class Tortue {
 	public static int [] positionTortue1 = new int [2];
 	public static int [] positionTortue2 = new int [2];
 	public static int [] positionTortue3 = new int [2];
 	public static int [] positionTortue4 = new int [2];
+	private String nom;
+	int positionLigne;
+	int positionColonne;
+
+    String direction = "Sud";
 	
-	public static void initialisationTortues() {
+	public Tortue() {
 		if (Menu.nb_joueurs == 2) {
     		positionTortue1 = new int[] {1,0};
     		positionTortue2 = new int[] {5,0};
@@ -22,4 +27,11 @@ public class Tortues {
     	}
 	}
 
+	public int getPositionColonne() {
+		return positionColonne;
+	}
+
+	public int getPositionLigne() {
+		return positionLigne;
+	}
 }
