@@ -88,7 +88,7 @@ public class Plateau extends JPanel{
 				}
     		}
     	}
-    	Tortues.initialisationTortues();
+    	Tortue.initialisationTortues();
     		if (Menu.nb_joueurs<=3) {
     			for(int i = 0; i<=700; i= i+100) {
     				g.drawImage(imageMurBois, xMur,   i, widthObject, heightObject,  this);
@@ -96,23 +96,23 @@ public class Plateau extends JPanel{
 
     		}
     		if (Menu.nb_joueurs==2) {
-    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
+    			g.drawImage(imageTortue1, 100*Tortue.positionTortue1[0], 100*Tortue.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortue.positionTortue2[0], 100*Tortue.positionTortue2[1], widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 300, 700, widthObject, heightObject,  this);
     		}
     		if (Menu.nb_joueurs==3) {
-    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue3, 100*Tortues.positionTortue3[0], 100*Tortues.positionTortue3[1], widthObject, heightObject,  this);
+    			g.drawImage(imageTortue1, 100*Tortue.positionTortue1[0], 100*Tortue.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortue.positionTortue2[0], 100*Tortue.positionTortue2[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue3, 100*Tortue.positionTortue3[0], 100*Tortue.positionTortue3[1], widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 0, 700, widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 300, 700, widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 600, 700, widthObject, heightObject,  this);
     		}
     		if (Menu.nb_joueurs==4) {
-    			g.drawImage(imageTortue1, 100*Tortues.positionTortue1[0], 100*Tortues.positionTortue1[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue2, 100*Tortues.positionTortue2[0], 100*Tortues.positionTortue2[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue3, 100*Tortues.positionTortue3[0], 100*Tortues.positionTortue3[1], widthObject, heightObject,  this);
-    	        g.drawImage(imageTortue4, 100*Tortues.positionTortue4[0], 100*Tortues.positionTortue4[1], widthObject, heightObject,  this);
+    			g.drawImage(imageTortue1, 100*Tortue.positionTortue1[0], 100*Tortue.positionTortue1[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue2, 100*Tortue.positionTortue2[0], 100*Tortue.positionTortue2[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue3, 100*Tortue.positionTortue3[0], 100*Tortue.positionTortue3[1], widthObject, heightObject,  this);
+    	        g.drawImage(imageTortue4, 100*Tortue.positionTortue4[0], 100*Tortue.positionTortue4[1], widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 100, 700, widthObject, heightObject,  this);
     	        g.drawImage(imageRuby, 600, 700, widthObject, heightObject,  this);
     		}

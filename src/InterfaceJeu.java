@@ -186,10 +186,7 @@ public class InterfaceJeu extends JFrame {
 			Mur.listeMurs.add(mur);
 			System.out.println("Construction du mur "+selectedColonneNb+" "+selectedLigneNb);//test
 			InterfaceJeu interfaceJeu = Menu.interfaceOuverte.get(0);
-			interfaceJeu.dispose();
-			Menu.interfaceOuverte.remove(interfaceJeu);
-			InterfaceJeu interfaceJeu1 = new InterfaceJeu();
-			Menu.interfaceOuverte.add(interfaceJeu1);
+			interfaceJeu.repaint();
 		}
 		else {
 			JOptionPane.showMessageDialog(this, "Il y a déjà quelque chose sur cette case !", "Erreur", JOptionPane.ERROR_MESSAGE);
