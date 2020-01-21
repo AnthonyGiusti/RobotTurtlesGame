@@ -70,7 +70,7 @@ public class Deplacement extends JFrame {
     }*/
 
     public static boolean isCaseFree(int[] emplacement) {
-        if (Arrays.equals(emplacement, Tortues.positionTortue1) || Arrays.equals(emplacement, Tortues.positionTortue2)) {
+        if (Arrays.equals(emplacement, Tortue.positionTortue1) || Arrays.equals(emplacement, Tortue.positionTortue2) || isAWall(emplacement)) {
             return false;
         }
         if (Menu.nb_joueurs == 2) {
@@ -78,30 +78,38 @@ public class Deplacement extends JFrame {
                 return false;
             }
         } else if (Menu.nb_joueurs == 3) {
-            if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
+            if (Arrays.equals(emplacement, Tortue.positionTortue3)) {
                 return false;
             } else if (((emplacement[0] == 3 || emplacement[0] == 0 || emplacement[0] == 6) && emplacement[1] == 7) || emplacement[0] == 7) { // rubis et colonne de murs
                 return false;
             }
         } else if (Menu.nb_joueurs == 4) {
-            if (Arrays.equals(emplacement, Tortues.positionTortue3)) {
+            if (Arrays.equals(emplacement, Tortue.positionTortue3)) {
                 return false;
-            } else if (Arrays.equals(emplacement, Tortues.positionTortue4)) {
+            } else if (Arrays.equals(emplacement, Tortue.positionTortue4)) {
                 return false;
             } else if ((emplacement[0] == 1 || emplacement[0] == 6) && emplacement[1] == 7) { // rubis
                 return false;
             }
+        } else {
+            System.out.println("testfor");
+
+
         }
- /*       else {
-            for(i=0,i<=Mur.nbMur,i++) {
-                if (Arrays.equals(emplacement, Mur.nouveauMur)){
+        System.out.println(true);//test
+        return true;
+    }
 
-
+    public static boolean isAWall(int[] emplacement) {
+        if (Mur.nbMur!=0) {
+            for(i=0;i<=Mur.nbMur-1;i++) {
+                Mur mur = Mur.listeMurs.get(i);
+                if (Arrays.equals(emplacement, mur.getPosition())){
+                    return true;
                 }
             }
-
-        }*/
-        return true;
+        }
+        return false;
     }
     }
 

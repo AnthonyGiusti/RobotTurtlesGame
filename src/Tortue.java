@@ -1,4 +1,4 @@
-public class Tortues {
+public class Tortue {
 	public static int [] positionTortue1 = new int [2];
 	public static int [] positionTortue2 = new int [2];
 	public static int [] positionTortue3 = new int [2];

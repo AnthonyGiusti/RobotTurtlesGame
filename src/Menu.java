@@ -7,6 +7,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +20,7 @@ public class Menu extends JFrame{
 	Color transparent = new Color(0,0,0,50);
 	Color vertFonce = new Color(0,100,0);
 	public static int nb_joueurs = 0;
+	public static ArrayList<InterfaceJeu> interfaceOuverte = new ArrayList();
 	
 	public Menu() {	
 		super("Robot Turtles Game");							//Nom de la fenetre menu
@@ -117,14 +119,17 @@ public class Menu extends JFrame{
 	
 	private void jouerA2Listener(ActionEvent e1) {		//Permet l'affichage lors de clic sur lancer une partie � 2 
 		InterfaceJeu interfaceJeuA2 = new InterfaceJeu();
+		interfaceOuverte.add(interfaceJeuA2);
 	}
 	
 	private void jouerA3Listener(ActionEvent e2) {
 		InterfaceJeu interfaceJeuA3 = new InterfaceJeu();
+		interfaceOuverte.add(interfaceJeuA3);
 	}
 	
 	private void jouerA4Listener(ActionEvent e3) {
 		InterfaceJeu interfaceJeuA4 = new InterfaceJeu();
+		interfaceOuverte.add(interfaceJeuA4);
 	}
 	
 	@SuppressWarnings("static-access")
@@ -187,3 +192,4 @@ public class Menu extends JFrame{
 		return nb_joueurs;
 	}
 }
+
